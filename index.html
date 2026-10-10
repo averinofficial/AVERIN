@@ -315,7 +315,7 @@
             margin-bottom: 20px;
         }
 
-        /* Size Selector */
+        /* Size & Color Selector */
         .size-selection, .color-selection {
             margin-bottom: 18px;
         }
@@ -557,7 +557,7 @@
 
         <div class="product-grid">
             
-            <!-- New T-Shirt Item with Color Swatches -->
+            <!-- T-Shirt Item with Color Swatches -->
             <div class="product-card" onclick="openModal('Casual Cotton T-Shirt', 'Rs. 1,500', 'Premium soft cotton fit t-shirt available in multiple vibrant colors.', 'T-shirt.green.jpg.jpeg', [
                 { colorName: 'Green', colorCode: '#2e7d32', img: 'T-shirt.green.jpg.jpeg' },
                 { colorName: 'Black', colorCode: '#111111', img: 'T-shirt.black.jpg.jpeg' },
@@ -641,6 +641,20 @@
                     <h3 class="product-title">Urban Winter Jacket</h3>
                     <p class="product-desc">Luxury finish insulated jacket.</p>
                     <div class="price-tag">Rs. 4,999</div>
+                    <button class="quick-btn">View Details</button>
+                </div>
+            </div>
+
+            <!-- Item 6 (Updated Image Name: jacket.jpg3.jpg) -->
+            <div class="product-card" onclick="openModal('Premium Biker Jacket', 'Rs. 3,900', 'High quality premium winter jacket with sleek design and maximum warmth.', 'jacket.jpg3.jpg')">
+                <div class="img-wrapper">
+                    <img src="jacket.jpg3.jpg" alt="Premium Biker Jacket">
+                    <span class="view-badge"><i class="fas fa-search-plus"></i> View</span>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Premium Biker Jacket</h3>
+                    <p class="product-desc">Sleek premium winter jacket.</p>
+                    <div class="price-tag">Rs. 3,900</div>
                     <button class="quick-btn">View Details</button>
                 </div>
             </div>
@@ -856,6 +870,14 @@
             }
         }
 
+        // ESC Key press handler for closing modals
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+                closeCheckoutModal();
+            }
+        });
+
         // Web3Forms Order Submit via AJAX
         const orderForm = document.getElementById('orderForm');
         const submitBtn = document.getElementById('submitBtn');
@@ -900,7 +922,7 @@
             });
         });
 
-        // Zoom Effect
+        // Image Zoom Logic
         function zoomImage(e) {
             const container = document.getElementById('zoomContainer');
             const img = document.getElementById('modalImg');
