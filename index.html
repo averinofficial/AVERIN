@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZUMER | Exclusive Menswear</title>
+    <title>AVERIN | Haute Couture & Luxury Menswear</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --bg-color: #050507;
-            --bg-gradient: radial-gradient(circle at 50% 0%, #12141c 0%, #050507 70%);
-            --card-bg: rgba(14, 16, 22, 0.7);
-            --card-hover: rgba(22, 26, 36, 0.85);
+            --bg-color: #040406;
+            --bg-gradient: radial-gradient(circle at 50% -20%, #171a26 0%, #040406 70%);
+            --card-bg: rgba(13, 15, 22, 0.75);
+            --card-hover: rgba(20, 24, 35, 0.9);
             --accent-gold: #f3d575;
-            --accent-gold-glow: rgba(243, 213, 117, 0.25);
+            --accent-gold-glow: rgba(243, 213, 117, 0.3);
             --text-main: #ffffff;
             --text-muted: #94a3b8;
             --border-color: rgba(243, 213, 117, 0.12);
@@ -38,6 +38,7 @@
             color: var(--text-main);
             line-height: 1.6;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
         /* Ultra Luxury Header */
@@ -46,14 +47,14 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(5, 5, 7, 0.85);
+            background: rgba(4, 4, 6, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 22px 8%;
+            padding: 20px 8%;
             z-index: 1000;
         }
 
@@ -99,33 +100,165 @@
             cursor: pointer;
         }
 
-        /* Products Section */
+        /* Hero Banner */
+        .hero-section {
+            padding: 170px 8% 60px;
+            text-align: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 30px;
+            background: rgba(243, 213, 117, 0.08);
+            border: 1px solid var(--border-color);
+            color: var(--accent-gold);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff 40%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .hero-btn {
+            background: var(--accent-gold);
+            color: #040406;
+            padding: 14px 32px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: 0.3s ease;
+            box-shadow: 0 5px 25px var(--accent-gold-glow);
+        }
+
+        .hero-btn:hover {
+            background: #ffffff;
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Trust Badges Bar */
+        .trust-section {
+            padding: 30px 8%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .trust-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .trust-card i {
+            font-size: 24px;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+
+        .trust-card h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .trust-card p {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Products Section & Filters */
         .products-section {
-            padding: 150px 8% 60px;
+            padding: 60px 8% 60px;
             max-width: 1400px;
             margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .section-title h2 {
-            font-size: 38px;
+            font-size: 34px;
             font-weight: 800;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 12px;
-            background: linear-gradient(135deg, #ffffff 30%, var(--accent-gold) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
         }
 
         .section-title p {
             color: var(--text-muted);
             font-size: 14px;
+        }
+
+        .category-filters {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 45px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
             letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--accent-gold);
+            color: #040406;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 15px var(--accent-gold-glow);
         }
 
         .product-grid {
@@ -176,7 +309,7 @@
             position: absolute;
             top: 12px;
             right: 12px;
-            background: rgba(5, 5, 7, 0.8);
+            background: rgba(4, 4, 6, 0.8);
             color: var(--text-main);
             padding: 6px 14px;
             border-radius: 20px;
@@ -229,7 +362,7 @@
 
         .product-card:hover .quick-btn {
             background: var(--accent-gold);
-            color: #050507;
+            color: #040406;
             border-color: var(--accent-gold);
             box-shadow: 0 5px 20px var(--accent-gold-glow);
         }
@@ -257,7 +390,6 @@
             flex-direction: column;
             justify-content: space-between;
             transition: all 0.4s ease;
-            position: relative;
         }
 
         .review-card:hover {
@@ -294,7 +426,7 @@
             height: 42px;
             border-radius: 50%;
             background: var(--accent-gold);
-            color: #050507;
+            color: #040406;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -372,7 +504,7 @@
             overflow: hidden;
             position: relative;
             cursor: zoom-in;
-            background: #050507;
+            background: #040406;
             border: 1px solid var(--border-color);
         }
 
@@ -389,7 +521,7 @@
             bottom: 12px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(5, 5, 7, 0.85);
+            background: rgba(4, 4, 6, 0.85);
             color: var(--text-main);
             padding: 6px 14px;
             border-radius: 20px;
@@ -447,7 +579,7 @@
         }
 
         .size-btn {
-            background: #050507;
+            background: #040406;
             border: 1px solid var(--border-color);
             color: var(--text-main);
             padding: 10px 20px;
@@ -465,7 +597,7 @@
             box-shadow: 0 0 15px var(--accent-gold-glow);
         }
 
-        /* Color Swatches (Dots) */
+        /* Color Swatches */
         .color-options {
             display: flex;
             gap: 14px;
@@ -479,7 +611,6 @@
             cursor: pointer;
             border: 2px solid transparent;
             transition: all 0.3s ease;
-            position: relative;
         }
 
         .color-dot:hover, .color-dot.active {
@@ -492,7 +623,7 @@
         .quantity-control {
             display: inline-flex;
             align-items: center;
-            background: #050507;
+            background: #040406;
             border: 1px solid var(--border-color);
             border-radius: 10px;
             overflow: hidden;
@@ -533,7 +664,7 @@
             gap: 12px;
             width: 100%;
             background: var(--accent-gold);
-            color: #050507;
+            color: #040406;
             border: none;
             padding: 16px;
             border-radius: 14px;
@@ -548,7 +679,7 @@
         }
 
         .modal-order-btn:hover {
-            background: #fff;
+            background: #ffffff;
             box-shadow: 0 8px 30px rgba(255, 255, 255, 0.4);
             transform: translateY(-2px);
         }
@@ -561,7 +692,7 @@
         }
 
         .checkout-summary {
-            background: #050507;
+            background: #040406;
             padding: 16px 20px;
             border-radius: 14px;
             margin-bottom: 25px;
@@ -597,7 +728,7 @@
         .form-group input, .form-group textarea {
             width: 100%;
             padding: 14px 16px;
-            background: #050507;
+            background: #040406;
             border: 1px solid var(--border-color);
             border-radius: 12px;
             color: var(--text-main);
@@ -621,7 +752,7 @@
         .submit-order-btn {
             width: 100%;
             background: var(--accent-gold);
-            color: #050507;
+            color: #040406;
             border: none;
             padding: 16px;
             border-radius: 14px;
@@ -636,7 +767,7 @@
         }
 
         .submit-order-btn:hover {
-            background: #fff;
+            background: #ffffff;
             box-shadow: 0 8px 30px rgba(255, 255, 255, 0.4);
         }
 
@@ -652,13 +783,115 @@
             border: 1px solid #166534;
         }
 
+        /* Luxury Footer */
+        footer {
+            background: #020203;
+            border-top: 1px solid var(--border-color);
+            padding: 70px 8% 30px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto 50px;
+        }
+
+        .footer-col h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            letter-spacing: 1px;
+        }
+
+        .footer-col p, .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 13px;
+            line-height: 2;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-gold);
+            color: #040406;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 25px;
+            font-size: 12px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: #ffffff;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            z-index: 1500;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
         /* Responsive Styles */
         @media (max-width: 768px) {
+            header {
+                padding: 18px 5%;
+            }
+
             nav ul {
                 display: none;
                 flex-direction: column;
                 position: absolute;
-                top: 75px;
+                top: 70px;
                 left: 0;
                 width: 100%;
                 background: #0d0f17;
@@ -676,17 +909,17 @@
                 display: block;
             }
 
+            .hero-title {
+                font-size: 32px;
+            }
+
             .product-grid, .reviews-grid {
                 grid-template-columns: repeat(1, 1fr);
                 gap: 20px;
             }
 
-            .product-card {
-                padding: 12px;
-            }
-
             .img-wrapper {
-                height: 240px;
+                height: 250px;
             }
 
             .modal-content {
@@ -710,13 +943,49 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="#services">Collection</a></li>
                 <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#services">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         <div class="menu-toggle" id="mobile-menu">
             <i class="fas fa-bars"></i>
         </div>
     </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-section">
+        <span class="hero-badge">AURUM COLLECTION '26</span>
+        <h1 class="hero-title">Redefining Menswear & Luxury Aesthetics</h1>
+        <p class="hero-subtitle">Crafted with precision, fleece perfection, and unmatched craftsmanship for the modern gentleman.</p>
+        <div class="hero-actions">
+            <a href="#services" class="hero-btn">Explore Collection</a>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="trust-section">
+        <div class="trust-grid">
+            <div class="trust-card">
+                <i class="fas fa-shipping-fast"></i>
+                <h4>Express Delivery</h4>
+                <p>2-3 Business Days Across Pakistan</p>
+            </div>
+            <div class="trust-card">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Guaranteed Quality</h4>
+                <p>Premium Fabrics & Precision Stitching</p>
+            </div>
+            <div class="trust-card">
+                <i class="fas fa-hand-holding-usd"></i>
+                <h4>Cash On Delivery</h4>
+                <p>Pay Conveniently Upon Receiving</p>
+            </div>
+            <div class="trust-card">
+                <i class="fas fa-sync-alt"></i>
+                <h4>7-Day Exchanges</h4>
+                <p>Hassle-Free Return & Size Swap</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Products Section -->
     <section class="products-section" id="services">
@@ -725,10 +994,18 @@
             <p>Click any product to view details & zoom image</p>
         </div>
 
+        <!-- Category Filters -->
+        <div class="category-filters">
+            <button class="filter-btn active" onclick="filterProducts('all', this)">All Items</button>
+            <button class="filter-btn" onclick="filterProducts('hoodie', this)">Hoodies</button>
+            <button class="filter-btn" onclick="filterProducts('jacket', this)">Jackets</button>
+            <button class="filter-btn" onclick="filterProducts('tshirt', this)">T-Shirts</button>
+        </div>
+
         <div class="product-grid">
             
-            <!-- T-Shirt Item with Color Swatches -->
-            <div class="product-card" onclick="openModal('Casual Cotton T-Shirt', 1500, 'Premium soft cotton fit t-shirt available in multiple vibrant colors.', 'T-shirt.green.jpg.jpeg', [
+            <!-- T-Shirt Item -->
+            <div class="product-card" data-category="tshirt" onclick="openModal('Casual Cotton T-Shirt', 1500, 'Premium soft cotton fit t-shirt available in multiple vibrant colors.', 'T-shirt.green.jpg.jpeg', [
                 { colorName: 'Green', colorCode: '#2e7d32', img: 'T-shirt.green.jpg.jpeg' },
                 { colorName: 'Black', colorCode: '#111111', img: 'T-shirt.black.jpg.jpeg' },
                 { colorName: 'White', colorCode: '#ffffff', img: 'T-shirt.white.jpg.jpeg' }
@@ -745,8 +1022,8 @@
                 </div>
             </div>
 
-            <!-- Item 1 -->
-            <div class="product-card" onclick="openModal('Premium Hoodie', 1799, 'Comfortable and stylish everyday wear crafted from premium fleece fabric.', 'hoodie1.jpg.jpeg')">
+            <!-- Hoodie 1 -->
+            <div class="product-card" data-category="hoodie" onclick="openModal('Premium Hoodie', 1799, 'Comfortable and stylish everyday wear crafted from premium fleece fabric.', 'hoodie1.jpg.jpeg')">
                 <div class="img-wrapper">
                     <img src="hoodie1.jpg.jpeg" alt="Premium Hoodie">
                     <span class="view-badge"><i class="fas fa-search-plus"></i> View</span>
@@ -759,8 +1036,8 @@
                 </div>
             </div>
 
-            <!-- Item 2 -->
-            <div class="product-card" onclick="openModal('Classic Hoodie', 1799, 'High quality fabric designed for extreme winter comfort and durability.', 'hoodie2.jpg.jpeg')">
+            <!-- Hoodie 2 -->
+            <div class="product-card" data-category="hoodie" onclick="openModal('Classic Hoodie', 1799, 'High quality fabric designed for extreme winter comfort and durability.', 'hoodie2.jpg.jpeg')">
                 <div class="img-wrapper">
                     <img src="hoodie2.jpg.jpeg" alt="Classic Hoodie">
                     <span class="view-badge"><i class="fas fa-search-plus"></i> View</span>
@@ -773,8 +1050,8 @@
                 </div>
             </div>
 
-            <!-- Item 3 -->
-            <div class="product-card" onclick="openModal('Ferrari Racing Jacket', 2999, 'Modern fit premium Scuderia Ferrari racing jacket with windproof layer.', 'Ferrari-jacket.jpg.jpg')">
+            <!-- Jacket 1 -->
+            <div class="product-card" data-category="jacket" onclick="openModal('Ferrari Racing Jacket', 2999, 'Modern fit premium Scuderia Ferrari racing jacket with windproof layer.', 'Ferrari-jacket.jpg.jpg')">
                 <div class="img-wrapper">
                     <img src="Ferrari-jacket.jpg.jpg" alt="Ferrari Racing Jacket">
                     <span class="view-badge"><i class="fas fa-search-plus"></i> View</span>
@@ -787,8 +1064,8 @@
                 </div>
             </div>
 
-            <!-- Item 4 -->
-            <div class="product-card" onclick="openModal('Executive Hoodie', 2500, 'Heavyweight fleece fabric hoodie with executive finish.', 'hoodie3.jpeg.jpeg')">
+            <!-- Hoodie 3 -->
+            <div class="product-card" data-category="hoodie" onclick="openModal('Executive Hoodie', 2500, 'Heavyweight fleece fabric hoodie with executive finish.', 'hoodie3.jpeg.jpeg')">
                 <div class="img-wrapper">
                     <img src="hoodie3.jpeg.jpeg" alt="Executive Hoodie">
                     <span class="view-badge"><i class="fas fa-search-plus"></i> View</span>
@@ -801,8 +1078,8 @@
                 </div>
             </div>
 
-            <!-- Item 5 -->
-            <div class="product-card" onclick="openModal('Urban Winter Jacket', 4999, 'Luxury finish insulated winter jacket with high-grade zippers.', 'jacket2.jpg.jpg')">
+            <!-- Jacket 2 -->
+            <div class="product-card" data-category="jacket" onclick="openModal('Urban Winter Jacket', 4999, 'Luxury finish insulated winter jacket with high-grade zippers.', 'jacket2.jpg.jpg')">
                 <div class="img-wrapper">
                     <img src="jacket2.jpg.jpg" alt="Urban Jacket">
                     <span class="view-badge"><i class="fas fa-search-plus"></i> View</span>
@@ -815,8 +1092,8 @@
                 </div>
             </div>
 
-            <!-- Item 6 -->
-            <div class="product-card" onclick="openModal('Premium Biker Jacket', 3900, 'High quality premium winter jacket with sleek design and maximum warmth.', 'jacket.jpg3.jpg')">
+            <!-- Jacket 3 -->
+            <div class="product-card" data-category="jacket" onclick="openModal('Premium Biker Jacket', 3900, 'High quality premium winter jacket with sleek design and maximum warmth.', 'jacket.jpg3.jpg')">
                 <div class="img-wrapper">
                     <img src="jacket.jpg3.jpg" alt="Premium Biker Jacket">
                     <span class="view-badge"><i class="fas fa-search-plus"></i> View</span>
@@ -988,17 +1265,17 @@
 
                 <div class="form-group">
                     <label>Full Name *</label>
-                    <input type="text" name="Customer Name" placeholder="e.g. Ur full Name" required>
+                    <input type="text" name="Customer Name" placeholder="e.g. Ali Ahmad" required>
                 </div>
 
                 <div class="form-group">
                     <label>Phone / WhatsApp Number *</label>
-                    <input type="tel" name="Phone Number" placeholder="03*****" required>
+                    <input type="tel" name="Phone Number" placeholder="03001234567" required>
                 </div>
 
                 <div class="form-group">
                     <label>City *</label>
-                    <input type="text" name="City" placeholder="e.g. Pakistan" required>
+                    <input type="text" name="City" placeholder="e.g. Lahore" required>
                 </div>
 
                 <div class="form-group">
@@ -1020,6 +1297,44 @@
         </div>
     </div>
 
+    <!-- Luxury Footer -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo" style="display:inline-block; margin-bottom: 15px;">AVER<span>IN</span></a>
+                <p>AVERIN delivers haute couture menswear designed for extreme winter comfort, executive luxury, and modern streetwear style.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab font-awesome fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home Collection</a></li>
+                    <li><a href="#services">Men's Apparel</a></li>
+                    <li><a href="#reviews">Client Testimonials</a></li>
+                    <li><a href="#contact">Order Tracking</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Customer Support</h3>
+                <p><i class="fas fa-truck" style="color:var(--accent-gold); margin-right:8px;"></i> Free Shipping Across Pakistan</p>
+                <p><i class="fas fa-undo" style="color:var(--accent-gold); margin-right:8px;"></i> 7 Days Return Policy</p>
+                <p><i class="fas fa-phone-alt" style="color:var(--accent-gold); margin-right:8px;"></i> +92 300 1234567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 AVERIN Menswear. All Rights Reserved. Premium E-Commerce Architecture.
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923001234567" target="_blank" class="whatsapp-float" title="Contact on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- JavaScript -->
     <script>
         const mobileMenu = document.getElementById('mobile-menu');
@@ -1033,6 +1348,21 @@
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
+
+        // Filter Function
+        function filterProducts(category, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const products = document.querySelectorAll('.product-card');
+            products.forEach(product => {
+                if(category === 'all' || product.getAttribute('data-category') === category) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
 
         // Open Product Modal Function
         function openModal(title, priceNum, desc, imgSrc, colorVariants = null) {
