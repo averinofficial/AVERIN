@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,7 +101,7 @@
 
         /* Products Section */
         .products-section {
-            padding: 150px 8% 100px;
+            padding: 150px 8% 60px;
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -235,6 +234,85 @@
             box-shadow: 0 5px 20px var(--accent-gold-glow);
         }
 
+        /* Customer Reviews Section */
+        .reviews-section {
+            padding: 60px 8% 100px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .review-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px var(--accent-gold-glow);
+        }
+
+        .stars {
+            color: var(--accent-gold);
+            font-size: 18px;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        .review-text {
+            color: #e2e8f0;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 15px;
+        }
+
+        .reviewer-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            color: #050507;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+        }
+
+        .reviewer-details h4 {
+            font-size: 15px;
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        .reviewer-details span {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
         /* Modal Styles */
         .modal-overlay {
             position: fixed;
@@ -345,15 +423,15 @@
         .modal-desc {
             color: var(--text-muted);
             font-size: 14px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
-        /* Size & Color Selector */
-        .size-selection, .color-selection {
-            margin-bottom: 22px;
+        /* Size, Color & Quantity Selector */
+        .size-selection, .color-selection, .quantity-selection {
+            margin-bottom: 18px;
         }
 
-        .size-selection label, .color-selection label {
+        .size-selection label, .color-selection label, .quantity-selection label {
             display: block;
             font-size: 12px;
             color: var(--text-muted);
@@ -408,6 +486,44 @@
             transform: scale(1.15);
             border-color: var(--accent-gold);
             box-shadow: 0 0 15px var(--accent-gold);
+        }
+
+        /* Quantity Controls */
+        .quantity-control {
+            display: inline-flex;
+            align-items: center;
+            background: #050507;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .qty-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            width: 38px;
+            height: 38px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qty-btn:hover {
+            background: rgba(243, 213, 117, 0.15);
+            color: var(--accent-gold);
+        }
+
+        .qty-val {
+            width: 44px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text-main);
         }
 
         .modal-order-btn {
@@ -560,9 +676,9 @@
                 display: block;
             }
 
-            .product-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
+            .product-grid, .reviews-grid {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 20px;
             }
 
             .product-card {
@@ -570,7 +686,7 @@
             }
 
             .img-wrapper {
-                height: 200px;
+                height: 240px;
             }
 
             .modal-content {
@@ -593,6 +709,7 @@
             <ul id="nav-links">
                 <li><a href="#">Home</a></li>
                 <li><a href="#services">Collection</a></li>
+                <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#services">Contact</a></li>
             </ul>
         </nav>
@@ -611,7 +728,7 @@
         <div class="product-grid">
             
             <!-- T-Shirt Item with Color Swatches -->
-            <div class="product-card" onclick="openModal('Casual Cotton T-Shirt', 'Rs. 1,500', 'Premium soft cotton fit t-shirt available in multiple vibrant colors.', 'T-shirt.green.jpg.jpeg', [
+            <div class="product-card" onclick="openModal('Casual Cotton T-Shirt', 1500, 'Premium soft cotton fit t-shirt available in multiple vibrant colors.', 'T-shirt.green.jpg.jpeg', [
                 { colorName: 'Green', colorCode: '#2e7d32', img: 'T-shirt.green.jpg.jpeg' },
                 { colorName: 'Black', colorCode: '#111111', img: 'T-shirt.black.jpg.jpeg' },
                 { colorName: 'White', colorCode: '#ffffff', img: 'T-shirt.white.jpg.jpeg' }
@@ -629,7 +746,7 @@
             </div>
 
             <!-- Item 1 -->
-            <div class="product-card" onclick="openModal('Premium Hoodie', 'Rs. 1,799', 'Comfortable and stylish everyday wear crafted from premium fleece fabric.', 'hoodie1.jpg.jpeg')">
+            <div class="product-card" onclick="openModal('Premium Hoodie', 1799, 'Comfortable and stylish everyday wear crafted from premium fleece fabric.', 'hoodie1.jpg.jpeg')">
                 <div class="img-wrapper">
                     <img src="hoodie1.jpg.jpeg" alt="Premium Hoodie">
                     <span class="view-badge"><i class="fas fa-search-plus"></i> View</span>
@@ -643,7 +760,7 @@
             </div>
 
             <!-- Item 2 -->
-            <div class="product-card" onclick="openModal('Classic Hoodie', 'Rs. 1,799', 'High quality fabric designed for extreme winter comfort and durability.', 'hoodie2.jpg.jpeg')">
+            <div class="product-card" onclick="openModal('Classic Hoodie', 1799, 'High quality fabric designed for extreme winter comfort and durability.', 'hoodie2.jpg.jpeg')">
                 <div class="img-wrapper">
                     <img src="hoodie2.jpg.jpeg" alt="Classic Hoodie">
                     <span class="view-badge"><i class="fas fa-search-plus"></i> View</span>
@@ -657,7 +774,7 @@
             </div>
 
             <!-- Item 3 -->
-            <div class="product-card" onclick="openModal('Ferrari Racing Jacket', 'Rs. 2,999', 'Modern fit premium Scuderia Ferrari racing jacket with windproof layer.', 'Ferrari-jacket.jpg.jpg')">
+            <div class="product-card" onclick="openModal('Ferrari Racing Jacket', 2999, 'Modern fit premium Scuderia Ferrari racing jacket with windproof layer.', 'Ferrari-jacket.jpg.jpg')">
                 <div class="img-wrapper">
                     <img src="Ferrari-jacket.jpg.jpg" alt="Ferrari Racing Jacket">
                     <span class="view-badge"><i class="fas fa-search-plus"></i> View</span>
@@ -671,7 +788,7 @@
             </div>
 
             <!-- Item 4 -->
-            <div class="product-card" onclick="openModal('Executive Hoodie', 'Rs. 2,500', 'Heavyweight fleece fabric hoodie with executive finish.', 'hoodie3.jpeg.jpeg')">
+            <div class="product-card" onclick="openModal('Executive Hoodie', 2500, 'Heavyweight fleece fabric hoodie with executive finish.', 'hoodie3.jpeg.jpeg')">
                 <div class="img-wrapper">
                     <img src="hoodie3.jpeg.jpeg" alt="Executive Hoodie">
                     <span class="view-badge"><i class="fas fa-search-plus"></i> View</span>
@@ -685,7 +802,7 @@
             </div>
 
             <!-- Item 5 -->
-            <div class="product-card" onclick="openModal('Urban Winter Jacket', 'Rs. 4,999', 'Luxury finish insulated winter jacket with high-grade zippers.', 'jacket2.jpg.jpg')">
+            <div class="product-card" onclick="openModal('Urban Winter Jacket', 4999, 'Luxury finish insulated winter jacket with high-grade zippers.', 'jacket2.jpg.jpg')">
                 <div class="img-wrapper">
                     <img src="jacket2.jpg.jpg" alt="Urban Jacket">
                     <span class="view-badge"><i class="fas fa-search-plus"></i> View</span>
@@ -699,7 +816,7 @@
             </div>
 
             <!-- Item 6 -->
-            <div class="product-card" onclick="openModal('Premium Biker Jacket', 'Rs. 3,900', 'High quality premium winter jacket with sleek design and maximum warmth.', 'jacket.jpg3.jpg')">
+            <div class="product-card" onclick="openModal('Premium Biker Jacket', 3900, 'High quality premium winter jacket with sleek design and maximum warmth.', 'jacket.jpg3.jpg')">
                 <div class="img-wrapper">
                     <img src="jacket.jpg3.jpg" alt="Premium Biker Jacket">
                     <span class="view-badge"><i class="fas fa-search-plus"></i> View</span>
@@ -712,6 +829,79 @@
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="reviews-section" id="reviews">
+        <div class="section-title">
+            <h2>Customer Reviews</h2>
+            <p>What our clients say about AVERIN Menswear</p>
+        </div>
+
+        <div class="reviews-grid">
+            <!-- Review 1 -->
+            <div class="review-card">
+                <div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Bohot zabardast quality! Hoodie ki fabric bohot soft hai aur fit bhi perfect aya. Delivery bhi time par mili."</p>
+                </div>
+                <div class="reviewer-info">
+                    <div class="reviewer-avatar">Z</div>
+                    <div class="reviewer-details">
+                        <h4>Zubair Khan</h4>
+                        <span>Sialkot</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="review-card">
+                <div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Ferrari Jacket wakai next level hai. Design bilkul premium lagta hai. Highly recommended."</p>
+                </div>
+                <div class="reviewer-info">
+                    <div class="reviewer-avatar">H</div>
+                    <div class="reviewer-details">
+                        <h4>Hira Ali</h4>
+                        <span>Lahore</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="review-card">
+                <div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"T-Shirt ka color aur material bohot acha hai. AVERIN Menswear best hai quality ke mamle mein."</p>
+                </div>
+                <div class="reviewer-info">
+                    <div class="reviewer-avatar">A</div>
+                    <div class="reviewer-details">
+                        <h4>Asif Rehman</h4>
+                        <span>Karachi</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -748,6 +938,16 @@
                     </div>
                 </div>
 
+                <!-- Quantity Selector -->
+                <div class="quantity-selection">
+                    <label>Quantity:</label>
+                    <div class="quantity-control">
+                        <button class="qty-btn" onclick="changeQty(-1)">-</button>
+                        <span class="qty-val" id="qtyVal">1</span>
+                        <button class="qty-btn" onclick="changeQty(1)">+</button>
+                    </div>
+                </div>
+
                 <button class="modal-order-btn" onclick="goToCheckout()">
                     <i class="fas fa-shopping-bag"></i> Proceed to Checkout
                 </button>
@@ -763,7 +963,14 @@
 
             <div class="checkout-summary">
                 <h4 id="summaryTitle">Product Name</h4>
-                <p><span id="summaryPrice">Rs. 0</span> | Size: <strong id="summarySize" style="color: var(--accent-gold);">M</strong> <span id="summaryColorWrapper">| Color: <strong id="summaryColor" style="color: var(--accent-gold);">-</strong></span></p>
+                <p>
+                    Size: <strong id="summarySize" style="color: var(--accent-gold);">M</strong> 
+                    <span id="summaryColorWrapper">| Color: <strong id="summaryColor" style="color: var(--accent-gold);">-</strong></span>
+                    | Qty: <strong id="summaryQty" style="color: var(--accent-gold);">1</strong>
+                </p>
+                <p style="margin-top: 6px; font-size: 14px; color: var(--text-main);">
+                    Total Amount: <strong id="summaryTotalPrice" style="color: var(--accent-gold);">Rs. 0</strong>
+                </p>
             </div>
 
             <form id="orderForm">
@@ -773,7 +980,9 @@
 
                 <!-- Order Info Hidden -->
                 <input type="hidden" name="Product Name" id="formProductName">
-                <input type="hidden" name="Price" id="formProductPrice">
+                <input type="hidden" name="Unit Price" id="formProductPrice">
+                <input type="hidden" name="Quantity" id="formProductQty">
+                <input type="hidden" name="Total Price" id="formTotalPrice">
                 <input type="hidden" name="Selected Size" id="formProductSize">
                 <input type="hidden" name="Selected Color" id="formProductColor">
 
@@ -818,19 +1027,22 @@
         let selectedSize = 'M';
         let selectedColor = '';
         let currentTitle = '';
-        let currentPrice = '';
+        let unitPrice = 0;
+        let currentQuantity = 1;
 
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
 
         // Open Product Modal Function
-        function openModal(title, price, desc, imgSrc, colorVariants = null) {
+        function openModal(title, priceNum, desc, imgSrc, colorVariants = null) {
             currentTitle = title;
-            currentPrice = price;
-            
+            unitPrice = priceNum;
+            currentQuantity = 1;
+            document.getElementById('qtyVal').innerText = currentQuantity;
+
             document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalPrice').innerText = price;
+            updateModalPrice();
             document.getElementById('modalDesc').innerText = desc;
             document.getElementById('modalImg').src = imgSrc;
 
@@ -868,6 +1080,20 @@
             document.body.style.overflow = 'hidden';
         }
 
+        // Quantity Change Handler (1 to 5 limit)
+        function changeQty(amount) {
+            currentQuantity += amount;
+            if (currentQuantity < 1) currentQuantity = 1;
+            if (currentQuantity > 5) currentQuantity = 5;
+            document.getElementById('qtyVal').innerText = currentQuantity;
+            updateModalPrice();
+        }
+
+        function updateModalPrice() {
+            const total = unitPrice * currentQuantity;
+            document.getElementById('modalPrice').innerText = 'Rs. ' + total.toLocaleString();
+        }
+
         // Close Product Modal
         function closeModal() {
             document.getElementById('productModal').classList.remove('active');
@@ -892,9 +1118,12 @@
         function goToCheckout() {
             closeModal();
 
+            const totalPrice = unitPrice * currentQuantity;
+
             document.getElementById('summaryTitle').innerText = currentTitle;
-            document.getElementById('summaryPrice').innerText = currentPrice;
             document.getElementById('summarySize').innerText = selectedSize;
+            document.getElementById('summaryQty').innerText = currentQuantity;
+            document.getElementById('summaryTotalPrice').innerText = 'Rs. ' + totalPrice.toLocaleString();
 
             if(selectedColor !== 'N/A') {
                 document.getElementById('summaryColorWrapper').style.display = 'inline';
@@ -904,7 +1133,9 @@
             }
 
             document.getElementById('formProductName').value = currentTitle;
-            document.getElementById('formProductPrice').value = currentPrice;
+            document.getElementById('formProductPrice').value = 'Rs. ' + unitPrice.toLocaleString();
+            document.getElementById('formProductQty').value = currentQuantity;
+            document.getElementById('formTotalPrice').value = 'Rs. ' + totalPrice.toLocaleString();
             document.getElementById('formProductSize').value = selectedSize;
             document.getElementById('formProductColor').value = selectedColor;
 
