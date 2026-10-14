@@ -506,7 +506,6 @@
             color: var(--accent-gold);
         }
 
-        /* Zoom Image Container */
         .modal-img-container {
             width: 100%;
             height: 420px;
@@ -752,13 +751,6 @@
             box-shadow: 0 0 15px var(--accent-gold-glow);
         }
 
-        .readonly-field {
-            background: #090c14 !important;
-            color: var(--text-muted) !important;
-            cursor: not-allowed;
-            border-color: rgba(223, 177, 91, 0.1) !important;
-        }
-
         .submit-order-btn {
             width: 100%;
             background: var(--accent-gold);
@@ -779,18 +771,6 @@
         .submit-order-btn:hover {
             background: #ffffff;
             box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
-        }
-
-        .success-banner {
-            display: none;
-            background: rgba(16, 185, 129, 0.15);
-            color: #34d399;
-            padding: 18px;
-            border-radius: 14px;
-            text-align: center;
-            font-size: 14px;
-            margin-top: 15px;
-            border: 1px solid #10b981;
         }
 
         /* Luxury Footer */
@@ -909,163 +889,7 @@
                 padding: 25px;
                 text-align: center;
                 gap: 20px;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            }
-
-            nav ul.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .hero-title {
-                font-size: 32px;
-            }
-
-            .product-grid, .reviews-grid {
-                grid-template-columns: repeat(1, 1fr);
-                gap: 20px;
-            }
-
-            .img-wrapper {
-                height: 250px;
-            }
-
-            .modal-content {
-                grid-template-columns: 1fr;
-                padding: 20px;
-            }
-
-            .modal-img-container {
-                height: 300px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Header -->
-    <header>
-        <a href="#" class="logo">AVER<span>IN</span></a>
-        <nav>
-            <ul id="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#services">Collection</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="menu-toggle" id="mobile-menu">
-            <i class="fas fa-bars"></i>
-        </div>
-    </header>
-
-    <!-- Hero Banner -->
-    <section class="hero-section">
-        <span class="hero-badge">AURUM COLLECTION '26</span>
-        <h1 class="hero-title">Redefining Menswear & Luxury Aesthetics</h1>
-        <p class="hero-subtitle">Crafted with precision, fleece perfection, and unmatched craftsmanship for the modern gentleman.</p>
-        <div class="hero-actions">
-            <a href="#services" class="hero-btn">Explore Collection</a>
-        </div>
-    </section>
-
-    <!-- Trust Badges -->
-    <section class="trust-section">
-        <div class="trust-grid">
-            <div class="trust-card">
-                <i class="fas fa-shipping-fast"></i>
-                <h4>Express Delivery</h4>
-                <p>2-3 Business Days Across Pakistan</p>
-            </div>
-            <div class="trust-card">
-                <i class="fas fa-shield-alt"></i>
-                <h4>Guaranteed Quality</h4>
-                <p>Premium Fabrics & Precision Stitching</p>
-            </div>
-            <div class="trust-card">
-                <i class="fas fa-hand-holding-usd"></i>
-                <h4>Cash On Delivery</h4>
-                <p>Pay Conveniently Upon Receiving</p>
-            </div>
-            <div class="trust-card">
-                <i class="fas fa-sync-alt"></i>
-                <h4>7-Day Exchanges</h4>
-                <p>Hassle-Free Return & Size Swap</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section class="products-section" id="services">
-        <div class="section-title">
-            <h2>Men's Collection</h2>
-            <p>Click any product to view details & zoom image</p>
-        </div>
-
-        <!-- Category Filters -->
-        <div class="category-filters">
-            <button class="filter-btn active" onclick="filterProducts('all', this)">All Items</button>
-            <button class="filter-btn" onclick="filterProducts('hoodie', this)">Hoodies</button>
-            <button class="filter-btn" onclick="filterProducts('jacket', this)">Jackets</button>
-            <button class="filter-btn" onclick="filterProducts('tshirt', this)">T-Shirts</button>
-        </div>
-
-        <div class="product-grid">
-            
-            <!-- T-Shirt Item -->
-            <div class="product-card" data-category="tshirt" onclick="openModal('Casual Cotton T-Shirt', 1500, 'Premium soft cotton fit t-shirt available in multiple vibrant colors.', 'T-shirt.green.jpg.jpeg', [
-                { colorName: 'Green', colorCode: '#2e7d32', img: 'T-shirt.green.jpg.jpeg' },
-                { colorName: 'Black', colorCode: '#111111', img: 'T-shirt.black.jpg.jpeg' },
-                { colorName: 'White', colorCode: '#ffffff', img: 'T-shirt.white.jpg.jpeg' }
-            ])">
-                <div class="img-wrapper">
-                    <img src="T-shirt.green.jpg.jpeg" alt="Casual Cotton T-Shirt">
-                    <span class="view-badge"><i class="fas fa-search-plus"></i> View</span>
-                </div>
-                <div class="product-details">
-                    <h3 class="product-title">Casual Cotton T-Shirt</h3>
-                    <p class="product-desc">Available in 3 Colors (Green, Black, White)</p>
-                    <div class="price-tag">Rs. 1,500</div>
-                    <button class="quick-btn">Buy Now</button>
-                </div>
-            </div>
-
-            <!-- Hoodie 1 -->
-            <div class="product-card" data-category="hoodie" onclick="openModal('Premium Hoodie', 1799, 'Comfortable and stylish everyday wear crafted from premium fleece fabric.', 'hoodie1.jpg.jpeg')">
-                <div class="img-wrapper">
-                    <img src="hoodie1.jpg.jpeg" alt="Premium Hoodie">
-                    <span class="view-badge"><i class="fas fa-search-plus"></i> View</span>
-                </div>
-                <div class="product-details">
-                    <h3 class="product-title">Premium Hoodie</h3>
-                    <p class="product-desc">Everyday comfort wear.</p>
-                    <div class="price-tag">Rs. 1,799</div>
-                    <button class="quick-btn">Buy Now</button>
-                </div>
-            </div>
-
-            <!-- Hoodie 2 -->
-            <div class="product-card" data-category="hoodie" onclick="openModal('Classic Hoodie', 1799, 'High quality fabric designed for extreme winter comfort and durability.', 'hoodie2.jpg.jpeg')">
-                <div class="img-wrapper">
-                    <img src="hoodie2.jpg.jpeg" alt="Classic Hoodie">
-                    <span class="view-badge"><i class="fas fa-search-plus"></i> View</span>
-                </div>
-                <div class="product-details">
-                    <h3 class="product-title">Classic Hoodie</h3>
-                    <p class="product-desc">High quality winter wear.</p>
-                    <div class="price-tag">Rs. 1,799</div>
-                    <button class="quick-btn">Buy Now</button>
-                </div>
-            </div>
-
-            <!-- Jacket 1 -->
-            <div class="product-card" data-category="jacket" onclick="openModal('Ferrari Racing Jacket', 2999, 'Modern fit premium Scuderia Ferrari racing jacket with windproof layer.', 'Ferrari-jacket.jpg.jpg')">
-                <div class="img-wrapper">
-                    <img src="Ferrari-jacket.jpg.jpg" alt="Ferrari Racing Jacket">
-                    <span class="view-badge"><i class="fas fa-search-plus"></i> View</span>
+                box-shadow: 0 10px 20px rgba(0,0,0,0.
                 </div>
                 <div class="product-details">
                     <h3 class="product-title">Ferrari Racing Jacket</h3>
